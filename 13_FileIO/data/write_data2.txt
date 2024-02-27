@@ -1,0 +1,10 @@
+쓰기 모드 a에 대해 알아보아요팡이썬 배워보아요Lets study python
+Line1
+Line2
+Line3
+Line1
+Line2
+Line3
+Line1
+Line2
+Line3
