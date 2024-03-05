@@ -1,3 +1,4 @@
+'''
 # Yesterday 가사가 저장되어 있는 텍스트 파일을 읽어 가사에 사용되고 있는 단어들의  목록을 알파벳 순서로 출력하고,
 # 각 단어들이 몇 개씩 사용되고 있는지 단어별 개수를  출력하는 프로그램 작성
 # ∙ 리스트, 세트, 딕셔너리 등의 자료구조를 이용
@@ -74,14 +75,15 @@
 #         print(numpair)
 
 # my_sum(path,'..\data\ex9_3_answer.txt')
-# readf='C:/workspace_Multi07/01_PythonProject/13_FileIO/data/ex9_3_words.txt'
-# writef='C:/workspace_Multi07/01_PythonProject/13_FileIO/data/ex9_3_ans.txt'
+readf='C:/workspace_Multi07/01_PythonProject/13_FileIO/data/ex9_3_words.txt'
+writef='C:/workspace_Multi07/01_PythonProject/13_FileIO/data/ex9_3_ans.txt'
+
 numpair=list()
 nums=list()
 ans=list()
-path='data/ex9-3.txt'
-def my_sum(numfile,filename):
-    with open(filename,'r', encoding='utf-8') as numfile:
+path='data/ex9_3_words.txt'
+def my_sum(filename1,filename2):
+    with open(filename1,'r', encoding='utf-8') as numfile:
         numpair=numfile.readlines()
         print(numpair)
         for i in range(len(numpair)):
@@ -92,22 +94,56 @@ def my_sum(numfile,filename):
             c=a+b
 
             ans.append([a,b,c])
-            print(f'{a}+{b}={c}')
-    with open(filename,'w',encoding='utf-8') as wfile:
+            print(f'{a} + {b} = {c}')
+    with open(filename2,'w',encoding='utf-8') as wfile:
         for i in range(len(ans)):
             w=str(ans[i])+'\n'
             wfile.write(w)
         print('file written completed')
 
-my_sum(numfile,path)
-
-
-
-
-
+my_sum(readf,writef)
+'''
 #4.
 
 # input_member('/data/memlist.txt')
+
+# memlist = list()
+#
+# def input_member(filename):
+#     with open(filename,'w',encoding='utf-8') as fname1:
+#     # f.close()
+#     # open(filename,'a',encoding='utf-8;) as f:
+#          while True:
+#             name=input('멤버를 입력하세요.(종료는 q) : ')
+#             if name=='q':
+#                 choice()
+#             else:
+#                 name=(str(name)+str('\n'))
+#                 fname1.write(name)
+#                 fname1.write(name+str('\n'))
+#
+# def output_member(filename):
+#     with open(filename,'r',encoding='utf-8') as fname2:
+#         memlist=fname2.readlines()
+#         for i in range(len(memlist)):
+#             print(memlist[i])
+#         choice()
+#
+#
+# def choice():
+#     job=input('저장 1. 출력 2. 종료 q : ')
+#     if job=='1':
+#         input_file=input('멤버 명단을 저장할 파일명을 입력하세요 : ')
+#         input_member(input_file)
+#     elif job=='2':
+#         load_file=input('멤버 명단이 저장된 파일명을 입력하세요. : ')
+#         output_member(load_file)
+#     elif job=='q':
+#         pass
+#     else:
+#         choice()
+#
+# choice()
 
 memlist = list()
 
@@ -128,7 +164,7 @@ def output_member(filename):
         memlist=fname2.readlines()
         for i in range(len(memlist)):
             print(memlist[i])
-        choice()
+    choice()
 
 
 def choice():
@@ -145,3 +181,4 @@ def choice():
         choice()
 
 choice()
+
